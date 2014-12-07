@@ -1,0 +1,76 @@
+#board
+{
+    background: #CCE8EF;
+}
+#messageBoard
+{
+    display: none;
+    width: 227px;
+    position: absolute;
+    top: 130px;
+    left: 100px;
+    padding-left: 100px;
+    padding-bottom: 50px;
+    border-radius:10px;
+    background: rgba(255, 252, 0, 0.95);
+    transition: background-color 0.5s ease;
+}
+#messageBoard:hover
+{
+    display: none;
+    width: 227px;
+    position: absolute;
+    top: 130px;
+    left: 100px;
+    padding-left: 100px;
+    padding-bottom: 50px;
+    border-radius:10px;
+    background: rgba(133, 255, 152, 0.8);
+    transition: background-color 0.5s ease;
+}
+#messageBoard:hover > #result
+{
+    opacity: 1;
+
+    margin-left: -100px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 80px;
+    font-family: Arial;
+    color: #FF6386;
+    transition: color 0.5s ease;
+}
+#messageBoard:hover > #restart
+{
+    background: #00FF2A;
+    text-decoration: none;
+    color: #5219FF;
+    transition: color 0.5s ease, background-color 0.5s ease;
+}
+#result
+{
+
+    opacity: 1;
+
+    margin-left: -100px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 80px;
+    font-family: Arial;
+    color: #8563FF;
+    transition: color 0.5s ease;
+    //border-style: solid;
+}
+#restart
+{
+    border-radius: 10px;
+    border-style: none;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 29px;
+    background: #3cb0fd;
+    padding: 10px 20px 10px 20px;
+    transition: color 0.5s ease, background-color 0.5s ease;
+}
