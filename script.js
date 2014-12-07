@@ -187,7 +187,7 @@ function clickHandler(e) {
                             //restart();
                         }
                     }
-                }, Math.random() * 250 + 500);
+                }, Math.random() * 100 + 500);
 
             }
         }
