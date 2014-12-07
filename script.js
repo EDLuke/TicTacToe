@@ -14,8 +14,12 @@ var loseCount = 0;
 var loseText = ["LOSE", "LOSED AGAIN", "STOP LOSING", "OMG", "I CAN'T", "WHY"];
 var winText = ["WIN", "WINNER", "CHAMPION", "SWAG", "R U CHEATING", "CHEATER", "STOP HACKING"];
 
+
+
 function paintBoard() {
     var board = document.getElementById('board');
+
+
 
     width = board.width;
     height = board.height;
@@ -97,7 +101,7 @@ function paintX(x, y) {
     cAlphaX += dAlpha;
     if (cAlphaX >= 1) {
         clearInterval(timerX);
-        cAlphaX = 0;
+
     }
 }
 
@@ -130,17 +134,16 @@ function paintO(x, y) {
     cAlphaO += dAlpha;
     if (cAlphaO >= 1) {
         clearInterval(timerO);
-        cAlphaO = 0;
-        enableInput();
 
+        enableInput();
     }
 }
 
 function clickHandler(e) {
-   
+
     var y = Math.floor(e.clientY / (height / 3));
     var x = Math.floor(e.clientX / (width / 3));
-    
+
     var bit = (1 << x + (y * 3));
 
     if (isEmpty(xBoard, oBoard, bit)) {
@@ -184,7 +187,7 @@ function clickHandler(e) {
                             //restart();
                         }
                     }
-                }, Math.random() * 300 + 500);
+                }, Math.random() * 250 + 500);
 
             }
         }
@@ -195,8 +198,8 @@ function checkNobody() {
     if ((xBoard | oBoard) === 0x1FF) {
         document.getElementById("result").innerHTML = "TIE";
         document.getElementById("messageBoard").style.display = 'block';
-        winCount = 0;
-        loseCount = 0;
+        //winCount = 0;
+        //loseCount = 0;
         disableInput();
 
         //restart();
@@ -313,13 +316,19 @@ function markBit(markBit, player) {
 
     if (player === 'O') {
         oBoard = oBoard | bit;
+        cAlphaO = 0;
         timerO = setInterval(function () {
-            paintO(posX, posY);
+            requestAnimationFrame(function () {
+                paintO(posX, posY);
+            });
         }, 7);
     } else {
         xBoard = xBoard | bit;
+        cAlphaX = 0;
         timerX = setInterval(function () {
-            paintX(posX, posY);
+            requestAnimationFrame(function () {
+                paintX(posX, posY);
+            });
         }, 7);
 
     }

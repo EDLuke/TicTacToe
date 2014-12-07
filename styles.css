@@ -7,7 +7,7 @@
     display: none;
     width: 227px;
     position: absolute;
-    top: 130px;
+    top: 90px;
     left: 100px;
     padding-left: 100px;
     padding-bottom: 50px;
@@ -20,7 +20,7 @@
     display: none;
     width: 227px;
     position: absolute;
-    top: 130px;
+    top: 90px;
     left: 100px;
     padding-left: 100px;
     padding-bottom: 50px;
@@ -71,6 +71,7 @@
     color: #ffffff;
     font-size: 29px;
     background: #3cb0fd;
+    margin-left:-45px;
     padding: 10px 20px 10px 20px;
     transition: color 0.5s ease, background-color 0.5s ease;
 }
